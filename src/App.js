@@ -1,9 +1,12 @@
 import './App.css';
+import Banner from './Pages/Banner/Banner';
+import Header from './Pages/Shared/Header/Header';
 
 function App() {
   return (
     <div className="container">
-      <h2 className='text-white bg-dark'>Shoes Hub Client side</h2>
+      <Header></Header>
+      <Banner></Banner>
     </div>
   );
 }
