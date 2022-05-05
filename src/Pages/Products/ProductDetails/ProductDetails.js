@@ -1,19 +1,22 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const ProductDetails = ({ product }) => {
 
-    const { id, name, stock, img, quantity } = product;
+    const { id, name, stock, img, quantity, price, seller } = product;
     return (
         <div>
             <Card>
-                <Card.Img variant="top" src="holder.js/100px160" />
+                <Card.Img variant="top" src={img} />
                 <Card.Body>
-                    <Card.Title>{name}</Card.Title>
+                    <Card.Title>Name : {name}</Card.Title>
                     <Card.Text>
-                        This is a longer card with supporting text below as a natural
-                        lead-in to additional content. This content is a little bit longer.
+                        <p>Price:{price} </p>
+                        <p>Quantity:{quantity} </p>
+                        <p>Supplier Name: {seller} </p>
                     </Card.Text>
+                    <Link to='/singleproduct/:productId'><button className='btn btn-primary'>Manage Stock</button></Link>
                 </Card.Body>
             </Card>
         </div>
