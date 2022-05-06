@@ -8,6 +8,8 @@ import Footer from './Pages/Shared/Footer/Footer';
 import Header from './Pages/Shared/Header/Header';
 import { getAuth } from "firebase/auth";
 import Notfound from './Pages/Shared/Notfound/Notfound';
+import Login from './Pages/Login/Login/Login';
+import Signup from './Pages/Login/Signup/Signup';
 
 const auth = getAuth(app);
 
@@ -19,6 +21,8 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/manageproducts' element={<ManageProducts></ManageProducts>}></Route>
         <Route path='/productdetails/:productId' element={<SingleProduct></SingleProduct>}></Route>
+        <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='/signup' element={<Signup></Signup>}></Route>
         <Route path='*' element={<Notfound></Notfound>}></Route>
       </Routes>
       <Footer></Footer>
