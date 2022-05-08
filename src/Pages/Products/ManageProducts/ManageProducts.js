@@ -13,7 +13,7 @@ const ManageProducts = () => {
     }, [])
     return (
         <div>
-            <h2>Latest Products</h2>
+            <h2>All Products at Warehouse</h2>
             <Row xs={1} md={2} lg={3} className="g-4">
                 {
                     products.map(product => <ProductDetails
