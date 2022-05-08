@@ -18,7 +18,8 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link href="#features">Features</Nav.Link>
+                            <Nav.Link href="home#support">Support</Nav.Link>
+                            <Nav.Link href="home#subscribe">Subscribe</Nav.Link>
                             {
                                 user?.uid
                                     ?
@@ -33,10 +34,11 @@ const Header = () => {
 
                         </Nav>
                         <Nav>
+                            <Nav.Link as={Link} to='/blog'>Blog</Nav.Link>
                             {
                                 user?.uid
                                     ?
-                                    <button onClick={() => handleSignout()}>Sign Out</button>
+                                    <button className='btn btn-danger' onClick={() => handleSignout()}>Sign Out</button>
                                     :
                                     <>
                                         <Nav.Link as={Link} to='/login'>Login</Nav.Link>

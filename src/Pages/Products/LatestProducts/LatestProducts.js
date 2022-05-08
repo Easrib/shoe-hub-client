@@ -14,15 +14,15 @@ const LatestProducts = () => {
 
     return (
         <div>
-            <h2>Latest Products</h2>
+            <h2 className='text-center'>Latest <span className='text-danger'>Products</span></h2>
             <Row xs={1} md={2} lg={3} className="g-4">
-            {
-                            products.slice(0, 6).map(product => <ProductDetails
-                                key={product.id}
-                                product={product}>
+                {
+                    products.slice(0, 6).map(product => <ProductDetails
+                        key={product.id}
+                        product={product}>
 
-                            </ProductDetails>)
-                        }
+                    </ProductDetails>)
+                }
             </Row>
         </div>
     );

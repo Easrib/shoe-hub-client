@@ -4,9 +4,9 @@ import subscribe from '../../../images/subscribe/subscribe.png'
 
 const Subscribe = () => {
     return (
-        <div className='row '>
-            <div className="col-lg-6">
-                <img className='img-fluid' src={subscribe} alt="" />
+        <div id='subscribe' className='row my-2 '>
+            <div className="col-lg-6 img-fluid">
+                <img src={subscribe} alt="" />
             </div>
             <div className="col-lg-6 text-center my-auto">
                 <h2>Want to get the latest news? Please subscribe</h2>

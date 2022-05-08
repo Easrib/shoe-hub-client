@@ -15,6 +15,10 @@ const SingleProduct = () => {
         <div>
             <h2>Single Products: {productId}</h2>
             <h2>Name: {product.name}</h2>
+            <form>
+                <input type="number" name="number" id="" />
+                <button className='btn btn-primary ms-2' type='submit'>Restock</button>
+            </form>
         </div>
     );
 };
