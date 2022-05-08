@@ -11,6 +11,7 @@ import Signup from './Pages/Login/Signup/Signup';
 import RequireAuth from './Pages/Login/RequireAuth/RequireAuth';
 import MyProducts from './Pages/Products/MyProducts/MyProducts';
 import AddProducts from './Pages/Products/AddProducts/AddProducts';
+import Blog from './Pages/Blog/Blog';
 
 
 
@@ -28,6 +29,7 @@ function App() {
           <RequireAuth>
             <SingleProduct></SingleProduct>
           </RequireAuth>}></Route>
+        <Route path='/blog' element={<Blog></Blog>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>
         <Route path='*' element={<Notfound></Notfound>}></Route>
