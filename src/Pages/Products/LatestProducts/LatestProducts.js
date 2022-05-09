@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import ProductDetails from '../ProductDetails/ProductDetails';
 
 const LatestProducts = () => {
@@ -7,7 +8,7 @@ const LatestProducts = () => {
 
 
     useEffect(() => {
-        fetch('products.json')
+        fetch('http://localhost:5000/products')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])
@@ -24,6 +25,9 @@ const LatestProducts = () => {
                     </ProductDetails>)
                 }
             </Row>
+            <div className='text-center my-2'>
+                <Link to='/manageproducts'><button className='btn btn-primary'>Manage Inventories</button></Link>
+            </div>
         </div>
     );
 };

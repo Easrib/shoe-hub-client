@@ -1,0 +1,22 @@
+[debug] [2022-05-08T10:55:18.699Z] ----------------------------------------------------------------------
+[debug] [2022-05-08T10:55:18.701Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\user\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-05-08T10:55:18.701Z] CLI Version:   10.6.0
+[debug] [2022-05-08T10:55:18.701Z] Platform:      win32
+[debug] [2022-05-08T10:55:18.702Z] Node Version:  v16.13.1
+[debug] [2022-05-08T10:55:18.703Z] Time:          Sun May 08 2022 16:55:18 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-05-08T10:55:18.703Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-05-08T10:55:18.775Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-05-08T10:55:18.776Z] > authorizing via signed-in user (easrib.sharik01@gmail.com)
+[debug] [2022-05-08T10:55:18.776Z] [iam] checking project shoe-hub-c43f7 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-05-08T10:55:18.778Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/shoe-hub-c43f7:testIamPermissions [none]
+[debug] [2022-05-08T10:55:18.779Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/shoe-hub-c43f7:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-05-08T10:55:26.775Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/shoe-hub-c43f7:testIamPermissions 200
+[debug] [2022-05-08T10:55:26.776Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/shoe-hub-c43f7:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-05-08T10:55:26.779Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/shoe-hub-c43f7 [none]
+[debug] [2022-05-08T10:55:36.349Z] Failed to make request to https://firebase.googleapis.com/v1beta1/projects/shoe-hub-c43f7
+[debug] [2022-05-08T10:55:44.200Z] FirebaseError: Failed to make request to https://firebase.googleapis.com/v1beta1/projects/shoe-hub-c43f7
+    at RetryOperation._fn (C:\Users\user\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:240:31)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[error] 
+[error] Error: Failed to get Firebase project shoe-hub-c43f7. Please make sure the project exists and your account has permission to access it.
