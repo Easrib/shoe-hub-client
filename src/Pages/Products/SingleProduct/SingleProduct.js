@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Card } from 'react-bootstrap';
 import { Link, useParams } from 'react-router-dom';
 
 const SingleProduct = () => {
@@ -13,12 +14,25 @@ const SingleProduct = () => {
     }, [])
     return (
         <div>
-            <h2>Single Products: {productId}</h2>
-            <h2>Name: {product.name}</h2>
-            <form>
-                <input type="number" name="number" id="" />
-                <button className='btn btn-primary ms-2' type='submit'>Restock</button>
-            </form>
+            <Card style={{ width: '20rem' }}>
+                <Card.Img variant="top" src={product.img} />
+                <Card.Body>
+                    <Card.Title>ID : {productId}</Card.Title>
+                    <p>Name: {product.name}</p>
+                    <p>Description: {product.category}</p>
+                    <p>Price: {product.price}</p>
+                    <p>Quantity: {product.quantity}</p>
+                    <p>Supplier: {product.seller}</p>
+                    <p>Sold: {product.stock}</p>
+                    <button className='btn btn-primary w-50 mb-2' >Delivered</button>
+                    <form >
+                        <input className='w-50' type="number" name="number" id="" />
+                        <button className='btn btn-primary ms-2' type='submit'>Restock</button>
+                    </form>
+                </Card.Body>
+            </Card>
+
+
             <div className='text-center my-2'>
                 <Link to='/manageproducts'><button className='btn btn-primary'>Manage Inventories</button></Link>
             </div>
