@@ -7,14 +7,14 @@ const ManageProducts = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://enigmatic-gorge-78786.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])
     const handleDeleteProduct = id => {
         const proceed = window.confirm('Are you confirm? ')
         if (proceed) {
-            const url = `http://localhost:5000/products/${id}`
+            const url = `https://enigmatic-gorge-78786.herokuapp.com/products/${id}`
 
             fetch(url, {
                 method: 'DELETE'
@@ -22,7 +22,7 @@ const ManageProducts = () => {
                 .then(res => res.json())
                 .then(result => {
                     console.log(result);
-                    const remaining = products.filter(product=>product._id!==id);
+                    const remaining = products.filter(product => product._id !== id);
                     setProducts(remaining)
                 })
 

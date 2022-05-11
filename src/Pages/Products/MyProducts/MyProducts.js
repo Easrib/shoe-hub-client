@@ -10,7 +10,7 @@ const MyProducts = () => {
 
     useEffect(() => {
         const email = user.email;
-        fetch(`http://localhost:5000/myproduct?email=${email}`, {
+        fetch(`https://enigmatic-gorge-78786.herokuapp.com/myproduct?email=${email}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
             }
@@ -22,7 +22,7 @@ const MyProducts = () => {
     const handleDeleteProduct = id => {
         const proceed = window.confirm('Are you confirm? ')
         if (proceed) {
-            const url = `http://localhost:5000/myproduct/${id}`
+            const url = `https://enigmatic-gorge-78786.herokuapp.com/myproduct/${id}`
 
             fetch(url, {
                 method: 'DELETE'
