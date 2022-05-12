@@ -8,17 +8,48 @@ const SingleProduct = () => {
 
 
     const [product, setProduct] = useState({})
+    const [stockQuantity, setStockQuantity] = useState(0);
+    const [reload, setReload] = useState(true);
     useEffect(() => {
         fetch(`https://enigmatic-gorge-78786.herokuapp.com/products/${productId}`)
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [])
+    useEffect(() => {
+        fetch(`https://enigmatic-gorge-78786.herokuapp.com/products/${productId}`)
+            .then(res => res.json())
+            .then(data => {
+                const qty = data.quantity
+                setStockQuantity(qty)
+                setReload(!reload)
+            })
+    }, [reload])
+    const handleDeliverd = () => {
+        const oldQuantity = parseInt(stockQuantity)
+        const quantity = oldQuantity - 1;
+        const updatedStock = { quantity };
+
+
+        const url = `https://enigmatic-gorge-78786.herokuapp.com/products/${productId}`;
+        fetch(url, {
+            method: "PUT",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(updatedStock)
+
+        })
+            .then(res => res.json())
+            .then(result => {
+                console.log(result);
+            })
+    }
 
     const handleStock = (event) => {
         event.preventDefault();
         const quantity = event.target.restock?.value;
 
-        const updatedStock = { quantity }
+        const updatedStock = { quantity };
         const url = `https://enigmatic-gorge-78786.herokuapp.com/products/${productId}`;
         fetch(url, {
             method: 'PUT',
@@ -29,7 +60,7 @@ const SingleProduct = () => {
         })
             .then(res => res.json())
             .then(result => {
-                console.log(result);
+                // setStockQuantity(updatedStock)
                 alert('Product Added')
                 event.target.reset()
             })
@@ -43,10 +74,10 @@ const SingleProduct = () => {
                     <p>Name: {product.name}</p>
                     <p>Description: {product.category}</p>
                     <p>Price: {product.price}</p>
-                    <p>Quantity: {product.quantity}</p>
+                    <p>Quantity: {stockQuantity}</p>
                     <p>Supplier: {product.seller}</p>
                     <p>Sold: {product.stock}</p>
-                    <button className='btn btn-primary w-50 mb-2' >Delivered</button>
+                    <button onClick={handleDeliverd} className='btn btn-primary w-50 mb-2' >Delivered</button>
                     <form onSubmit={handleStock}>
                         <input className='w-50' type="number" name="restock" id="restock" />
                         <button className='btn btn-primary ms-2' type='submit'>Restock</button>
