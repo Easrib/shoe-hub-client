@@ -66,8 +66,8 @@ const SingleProduct = () => {
             })
     }
     return (
-        <div>
-            <Card style={{ width: '20rem' }}>
+        <div >
+            <Card className='mx-auto my-2' style={{ width: '20rem' }}>
                 <Card.Img variant="top" src={product.img} />
                 <Card.Body>
                     <Card.Title>ID : {productId}</Card.Title>

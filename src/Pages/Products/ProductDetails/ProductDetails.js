@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 const ProductDetails = ({ product }) => {
 
-    const { _id, name, stock, img, quantity, price, seller } = product;
+    const { _id, name, stock, img, quantity, price, seller, category } = product;
     const navigate = useNavigate();
 
     const handleSingleProduct = id => {
@@ -18,6 +18,7 @@ const ProductDetails = ({ product }) => {
                     <Card.Title>Name : {name}</Card.Title>
                     <Card.Text>
                         <p>Price:{price} </p>
+                        <p>Descripton: {category }</p>
                         <p>Quantity:{quantity} </p>
                         <p>Supplier Name: {seller} </p>
                     </Card.Text>
