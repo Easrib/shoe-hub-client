@@ -1,6 +1,19 @@
+# Projects Name : Shoehub
+
+This project is live at [Shoe Hub](https://shoe-hub-c43f7.web.app/).
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Project Description
+This website is for shoe inventory management. 
+
+## Features & Functionality of this website
+* Use firebase authentication system
+* Can delete and add products by login
+* without login can't delete, add or update product
+* server deployed to heroku
+* database deployed to mongoBD
 
 ## Available Scripts
 

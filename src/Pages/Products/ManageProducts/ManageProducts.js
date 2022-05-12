@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Card, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const ManageProducts = () => {
     const [products, setProducts] = useState([]);
+    const navigate = useNavigate();
 
 
     useEffect(() => {
@@ -28,6 +29,9 @@ const ManageProducts = () => {
 
         }
     }
+    const handleSingleProduct = id => {
+        navigate(`/productdetails/${id}`)
+    }
     return (
         <div>
             <h2>All Products at Warehouse</h2>
@@ -46,7 +50,8 @@ const ManageProducts = () => {
                                     <p>Quantity:{product.quantity} </p>
                                     <p>Supplier Name: {product.seller} </p>
                                 </Card.Text>
-                                <button onClick={() => handleDeleteProduct(product._id)} className='btn btn-primary'>Delete Stock</button>
+                                <button className='me-2 btn btn-primary' onClick={() => handleDeleteProduct(product._id)}>Delete Stock</button>
+                                <button onClick={() => handleSingleProduct(product._id)} className='btn btn-primary'>Manage Stock</button>
                             </Card.Body>
                         </Card>
                     )

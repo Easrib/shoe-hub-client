@@ -16,10 +16,10 @@ const SingleProduct = () => {
 
     const handleStock = (event) => {
         event.preventDefault();
-        const restock = event.target.restock.value;
-        const updatedStock = { restock }
-        const url = `https://enigmatic-gorge-78786.herokuapp.com/products/${productId}`;
+        const quantity = event.target.restock?.value;
 
+        const updatedStock = { quantity }
+        const url = `https://enigmatic-gorge-78786.herokuapp.com/products/${productId}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -29,7 +29,7 @@ const SingleProduct = () => {
         })
             .then(res => res.json())
             .then(result => {
-                console.log(result)
+                console.log(result);
                 alert('Product Added')
                 event.target.reset()
             })
@@ -47,9 +47,9 @@ const SingleProduct = () => {
                     <p>Supplier: {product.seller}</p>
                     <p>Sold: {product.stock}</p>
                     <button className='btn btn-primary w-50 mb-2' >Delivered</button>
-                    <form >
-                        <input className='w-50' type="number" name="restock" id="" />
-                        <button onClick={handleStock()} className='btn btn-primary ms-2' type='submit'>Restock</button>
+                    <form onSubmit={handleStock}>
+                        <input className='w-50' type="number" name="restock" id="restock" />
+                        <button className='btn btn-primary ms-2' type='submit'>Restock</button>
                     </form>
                 </Card.Body>
             </Card>
